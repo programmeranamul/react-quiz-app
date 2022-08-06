@@ -7,7 +7,7 @@ import SingleQuiz from "./SingleQuiz";
 import QuizPageHeader from "./QuizPageHeader";
 import { useEffect } from "react";
 
-function Quiz() {
+function Quiz({ setFinished, finished }) {
   const [showModal, setShowModal] = useState(false);
   const openModal = () => {
     setShowModal(true);
@@ -26,15 +26,15 @@ function Quiz() {
   const [score, setScore] = useState(0);
   const [lockedQues, setLockedAns] = useState([]);
   const [locked, setLocked] = useState("");
-  const [end, setEnd] = useState(false)
+  const [end, setEnd] = useState(false);
 
   const handelNext = () => {
-    let newIndex = quesIndex + 1
+    let newIndex = quesIndex + 1;
     setQuesIndex(newIndex);
-    
-    if(newIndex >= questions.length -1) {
-      setEnd(true)
-    }else{
+
+    if (newIndex >= questions.length - 1) {
+      setEnd(true);
+    } else {
       console.log(newIndex);
     }
   };
@@ -49,10 +49,10 @@ function Quiz() {
     setLockedAns([...lockedQues, quesIndex]);
   };
 
-
   const handelFinish = () => {
-    console.log("finish")
-  }
+    console.log("finish");
+    setFinished(true)
+  };
 
   return (
     <>

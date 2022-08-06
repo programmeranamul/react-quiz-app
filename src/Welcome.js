@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import img from "./images/home.png";
 import MyModal from "./components/MyModal";
+import { useNavigate } from 'react-router-dom';
 
 function Welcome() {
+  let navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const openModal = () => {
     setShowModal(true);
@@ -14,6 +16,7 @@ function Welcome() {
   const seletLanguage = (lang) => {
     console.log(lang);
     closeModal()
+    navigate('quiz');
   };
   return (
     <>
