@@ -11,24 +11,27 @@
   --un-selected-btn-text: #bdbdbd;
 }
 
+
 .color-1 {
   color: var(--input-font-color);
 }
-.color-2{
+.color-2 {
   color: var(--heading);
 }
 .bg-1 {
   background-color: var(--bg-color);
 }
-.bg-2{
+.bg-2 {
   background-color: var(--outline-button-bg);
 }
 
-
-.fs-15{
+.fs-15 {
   font-size: 15px;
 }
 
+.br-15 {
+  border-radius: 15px !important;
+}
 * {
   margin: 0;
   padding: 0;
@@ -45,6 +48,7 @@ body {
   min-height: 100vh;
   background-position: top;
   background-size: cover;
+  position: relative;
 }
 
 .title-1 {
@@ -65,6 +69,9 @@ body {
 }
 .page-wrapper {
   margin-top: 42px;
+}
+.container{
+  max-width: 600px !important;
 }
 
 /* btn */

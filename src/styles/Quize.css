@@ -1,25 +1,65 @@
 .scoar-board {
-  padding: 8px 15px;
+  padding: 8px 15px 13px;
   border-radius: 10px;
 }
 
-.my-progress-bar{
-    /* height: 8px; */
-    border: 0.8px solid #000000;
-    border-radius: 9px;
-    position: relative;
+.my-progress-bar {
+  border: 0.8px solid #000000;
+  border-radius: 9px;
+  position: relative;
 }
 
-.progess-info{
-    /* position: absolute;
-    left: 0;
-    content: "";
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: red; */
-    height: 13.5px;
-    background-color: #382E2C;
-    width: 80%;
-    border-radius: 9px;
+.progess-info {
+  height: 13.5px;
+  background-color: #382e2c;
+  width: 80%;
+  border-radius: 9px;
+}
+.quiz-section {
+  margin-top: 30px;
+}
+.quiz-img {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.question {
+  margin-top: 18px;
+  margin-bottom: 27px;
+}
+
+.option-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.ans-box {
+  border: 1px solid #e7d9cc;
+  border-radius: 8px;
+  padding: 8px 13px;
+  margin-bottom: 30px;
+}
+
+.r-ans {
+  color: #534844;
+  margin-bottom: 0;
+}
+
+.des {
+  color: #403c3b;
+  margin-top: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 9px;
+  right: 15px;
+}
+.close svg {
+  font-size: 30px;
+  color: #382e2c;
+}
+.correct-ans{
+  background-color: red !important;
 }
