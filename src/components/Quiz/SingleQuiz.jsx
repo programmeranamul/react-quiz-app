@@ -24,7 +24,7 @@ function SingleQuiz({ questions, checkAnswer, lockedQues, quesIndex, locked }) {
                 //     : "wrong-ans"
                 // }`}
                 className={`selected-btn ${
-                  locked === op && correct_answer === op ? "correct-ans" : "wrong-ans"
+                  locked === op && "selected-ans"
                 }`}
               >
                 {op}

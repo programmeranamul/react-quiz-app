@@ -69,3 +69,7 @@
 .btn_disabled {
   background-color: #877572 !important;
 }
+.selected-ans{
+  background: #E7D9CC !important;
+  color: #382E2C !important;
+}

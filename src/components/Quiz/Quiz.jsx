@@ -26,9 +26,17 @@ function Quiz() {
   const [score, setScore] = useState(0);
   const [lockedQues, setLockedAns] = useState([]);
   const [locked, setLocked] = useState("");
+  const [end, setEnd] = useState(false)
 
   const handelNext = () => {
-    setQuesIndex(quesIndex + 1);
+    let newIndex = quesIndex + 1
+    setQuesIndex(newIndex);
+    
+    if(newIndex >= questions.length -1) {
+      setEnd(true)
+    }else{
+      console.log(newIndex);
+    }
   };
 
   const checkAnswer = (answer) => {
@@ -40,6 +48,11 @@ function Quiz() {
     }
     setLockedAns([...lockedQues, quesIndex]);
   };
+
+
+  const handelFinish = () => {
+    console.log("finish")
+  }
 
   return (
     <>
@@ -67,15 +80,27 @@ function Quiz() {
           </button>
         </div>
         <div className="mb-5">
-          <button
-            onClick={handelNext}
-            className={`${
-              lockedQues.includes(quesIndex) ? "" : "btn_disabled"
-            } filled-btn d-block w-100 br-15`}
-            disabled={lockedQues.includes(quesIndex) ? false : true}
-          >
-            Next
-          </button>
+          {end ? (
+            <button
+              onClick={handelFinish}
+              className={`${
+                lockedQues.includes(quesIndex) ? "" : "btn_disabled"
+              } filled-btn d-block w-100 br-15`}
+              disabled={lockedQues.includes(quesIndex) ? false : true}
+            >
+              Finish
+            </button>
+          ) : (
+            <button
+              onClick={handelNext}
+              className={`${
+                lockedQues.includes(quesIndex) ? "" : "btn_disabled"
+              } filled-btn d-block w-100 br-15`}
+              disabled={lockedQues.includes(quesIndex) ? false : true}
+            >
+              Next
+            </button>
+          )}
         </div>
       </article>
       <MyModal showModal={showModal}>

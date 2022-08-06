@@ -10,7 +10,7 @@ function QuizPage() {
     <section className="page-wrapper">
      
       <Quiz />
-      <QuizResultPopUp />
+      {/* <QuizResultPopUp /> */}
     </section>
   );
 }
