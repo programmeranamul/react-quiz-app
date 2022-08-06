@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --bg-color: #a48b86;
+  --heading: #3b2e2c;
+  --input-font-color: #534844;
+  --button-bg: #382e2c;
+  --outline-button-bg: #e7d9cc;
+  --white: #ffffff;
+}
+
+.color-1 {
+  color: var(--input-font-color);
+}
+.bg-1{
+  background-color: var(--bg-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Alegreya", serif;
+  background-image: url("../images/bg.png");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  background-position: top;
+  background-size: cover;
+}
+
+.title-1 {
+  --heading: #3b2e2c;
+  font-size: 29px;
+  font-weight: 700;
+}
+.title-2 {
+  --heading: #3b2e2c;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 36px;
+}
+.page-wrapper {
+  margin-top: 42px;
+}
+
+/* btn */
+.filled-btn {
+  border-radius: 20px;
+  padding: 13px 23px;
+  border: none;
+  outline: none;
+  color: var(--outline-button-bg);
+  background-color: var(--button-bg);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.outline-btn {
+  border-radius: 20px;
+  padding: 13px 23px;
+  border: 1px solid var(--white);
+  outline: none;
+  color: var(--outline-button-bg);
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+  color: var(--white);
+}

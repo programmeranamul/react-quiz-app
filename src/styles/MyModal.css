@@ -1,0 +1,28 @@
+.my-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  width: 100%;
+}
+.modal-body-center {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.my-modal-body {
+  border-radius: 20px;
+  padding: 28px 15px;
+  width: 100%;
+}
+.show-modal {
+  display: block;
+}
+
+.hide-modal {
+  display: none;
+}
