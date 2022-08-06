@@ -27,18 +27,16 @@ function Quiz({ setFinished, finished, score, setScore }) {
   const [end, setEnd] = useState(false);
 
   const handelNext = () => {
+    setLocked("");
     let newIndex = quesIndex + 1;
     setQuesIndex(newIndex);
 
     if (newIndex >= questions.length - 1) {
       setEnd(true);
-    } else {
-      console.log(newIndex);
     }
   };
 
   const checkAnswer = (answer) => {
-    console.log("answer", quesIndex);
     if (lockedQues.includes(quesIndex)) return;
     setLocked(answer);
     if (answer === questions[quesIndex].correct_answer) {
@@ -48,7 +46,6 @@ function Quiz({ setFinished, finished, score, setScore }) {
   };
 
   const handelFinish = () => {
-    console.log("finish");
     setFinished(true);
   };
 
