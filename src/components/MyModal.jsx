@@ -1,5 +1,4 @@
 import "../styles/MyModal.css";
-import ReactDOM from "react-dom";
 
 function MyModal({ showModal, children }) {
   return (
