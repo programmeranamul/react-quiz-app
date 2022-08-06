@@ -7,7 +7,7 @@ import SubmitDetails from "../components/submitDetails/SubmitDetails";
 function QuizPage() {
   return (
     <section className="page-wrapper">
-      <QuizPageHeader />
+     
       <Quiz />
     </section>
   );

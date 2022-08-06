@@ -1,9 +1,10 @@
 import React from "react";
 import img from "../../images/image 6.png";
 
-function SingleQuiz({ questions }) {
+function SingleQuiz({ questions, checkAnswer, lockedQues, quesIndex, locked }) {
   const { correct_answer, question, options } = questions;
-  const suffledOption = options.sort(() => Math.random() - 0.5);
+  // const suffledOption = options.sort(() => Math.random() - 0.5);
+  const suffledOption = options;
   return (
     <>
       <div className="container">
@@ -16,8 +17,14 @@ function SingleQuiz({ questions }) {
             {suffledOption.map((op) => (
               <button
                 key={op}
+                onClick={() => checkAnswer(op)}
+                // className={`selected-btn ${
+                //   lockedQues.includes(quesIndex) && correct_answer === op
+                //     ? "correct-ans"
+                //     : "wrong-ans"
+                // }`}
                 className={`selected-btn ${
-                  correct_answer === op ? "correct-ans" : ""
+                  locked === op && correct_answer === op ? "correct-ans" : "wrong-ans"
                 }`}
               >
                 {op}

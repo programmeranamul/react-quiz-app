@@ -60,6 +60,12 @@
   font-size: 30px;
   color: #382e2c;
 }
-.correct-ans{
+.correct-ans {
+  background-color: green !important;
+}
+.correct-ans {
   background-color: red !important;
+}
+.btn_disabled {
+  background-color: #877572 !important;
 }

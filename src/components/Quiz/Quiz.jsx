@@ -3,7 +3,9 @@ import img from "../../images/image 6.png";
 import MyModal from "./../MyModal";
 import { IoClose } from "react-icons/io5";
 import { data } from "./../../data/data";
-import SingleQuiz from './SingleQuiz';
+import SingleQuiz from "./SingleQuiz";
+import QuizPageHeader from "./QuizPageHeader";
+import { useEffect } from "react";
 
 function Quiz() {
   const [showModal, setShowModal] = useState(false);
@@ -20,29 +22,60 @@ function Quiz() {
   };
 
   const [questions, setQuestions] = useState(data);
-  const [quesIndex, setQuesIndex] = useState(0)
-  console.log(questions);
+  const [quesIndex, setQuesIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [lockedQues, setLockedAns] = useState([]);
+  const [locked, setLocked] = useState("");
 
   const handelNext = () => {
-    
-  }
+    setQuesIndex(quesIndex + 1);
+  };
+
+  const checkAnswer = (answer) => {
+    console.log("answer", quesIndex);
+    if (lockedQues.includes(quesIndex)) return;
+    setLocked(answer);
+    if (answer === questions[quesIndex].correct_answer) {
+      setScore(score + 1);
+    }
+    setLockedAns([...lockedQues, quesIndex]);
+  };
 
   return (
     <>
+      <QuizPageHeader
+        score={score}
+        totalQus={questions.length}
+        quesIndex={quesIndex}
+      />
       <article className="quiz-section">
-      <SingleQuiz questions={questions[0]}/>
+        <SingleQuiz
+          checkAnswer={checkAnswer}
+          questions={questions[quesIndex]}
+          lockedQues={lockedQues}
+          quesIndex={quesIndex}
+          locked={locked}
+        />
       </article>
       <article className="container">
         <div className="mb-4">
           <button
-            className="outline-btn d-block w-100 br-15"
+            className={"outline-btn d-block w-100 br-15"}
             onClick={() => handelCoorectAnsAndDtls()}
           >
             Show right answer & Details
           </button>
         </div>
         <div className="mb-5">
-          <button className="filled-btn d-block w-100 br-15">Next</button>
+          <button
+            onClick={handelNext}
+            className={`${
+              lockedQues.includes(quesIndex) ? "" : "btn_disabled"
+            } filled-btn d-block w-100 br-15`}
+            disabled={lockedQues.includes(quesIndex) ? false : true}
+          >
+            Next
+          </button>
         </div>
       </article>
       <MyModal showModal={showModal}>
