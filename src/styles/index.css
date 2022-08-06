@@ -11,7 +11,6 @@
   --un-selected-btn-text: #bdbdbd;
 }
 
-
 .color-1 {
   color: var(--input-font-color);
 }
@@ -68,9 +67,9 @@ body {
   font-weight: 700;
 }
 .page-wrapper {
-  margin-top: 42px;
+  padding-top: 42px;
 }
-.container{
+.container {
   max-width: 600px !important;
 }
 
@@ -98,6 +97,9 @@ body {
   font-size: 20px;
   line-height: 27px;
   color: var(--white);
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .selected-btn,
@@ -128,6 +130,6 @@ body {
   gap: 30px;
 }
 
-.fw-500{
+.fw-500 {
   font-weight: 500 !important;
 }

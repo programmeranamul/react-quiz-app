@@ -2,7 +2,7 @@ import React from "react";
 
 function QuizPageHeader({ score, quesIndex, totalQus }) {
   let process = ((quesIndex + 1) / totalQus) * 100;
-  console.log("process", process);
+
 
   return (
     <div className="container">

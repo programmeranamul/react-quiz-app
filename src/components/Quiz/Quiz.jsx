@@ -74,7 +74,7 @@ function Quiz({ setFinished, finished, score, setScore }) {
             Show right answer & Details
           </button>
         </div>
-        <div className="mb-5">
+        <div className="pb-5">
           {end ? (
             <button
               onClick={handelFinish}
@@ -100,31 +100,24 @@ function Quiz({ setFinished, finished, score, setScore }) {
       </article>
       <MyModal showModal={showModal}>
         <div className="close" onClick={closeModal}>
-          <IoClose />
+          <IoClose className="cursor-pointer"/>
         </div>
         <h2 className="title-2">Right Answer & Details</h2>
         <div className="ans-box">
           <p className="r-ans">Right Answer</p>
           <p className="mb-0">
-            <span className="title-3 color-2">Thomas Alva Edison</span>
+            <span className="title-3 color-2">{questions[quesIndex].correct_answer}</span>
           </p>
         </div>
-        <p className="title-3 color-2">Thomas Alva Edison history</p>
+        <p className="title-3 color-2">{questions[quesIndex].title}</p>
         <div>
           <div className="quiz-img">
-            <img src={img} alt="" className="w-100" />
+            <img src={questions[quesIndex].img}  alt="" className="w-100" />
           </div>
         </div>
         <p className="fs-15 des ">
-          Thomas Edison began his career selling candy, newspapers and
-          vegetables on the trains running from Port Huron to Detroit. He turned
-          a $50-a-week profit by age 13, most of which went to buying equipment
-          for electrical and chemical experiments.[21] He became a telegraph
-          operator after he saved 3-year-old Jimmie MacKenzie from being struck
-          by a runaway train. Jimmie's father, station agent J. U. MacKenzie of
-          Mount Clemens, Michigan, was so grateful that he
-        </p>
-        <button onClick={closeModal}>Close</button>
+        {questions[quesIndex].description}
+        </p>       
       </MyModal>
     </>
   );
