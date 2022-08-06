@@ -10,6 +10,11 @@ function Welcome() {
   const closeModal = () => {
     setShowModal(false);
   };
+
+  const seletLanguage = (lang) => {
+    console.log(lang);
+    closeModal()
+  };
   return (
     <>
       <section className="page-wrapper" onClick={() => console.log("OK")}>
@@ -37,9 +42,22 @@ function Welcome() {
         </article>
       </section>
       <MyModal showModal={showModal}>
+        <p className="title-2">Please select language</p>
         <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <button onClick={closeModal}>Off</button>
+        <div className="my-btn-wrapper">
+          <button
+            className="selected-btn"
+            onClick={() => seletLanguage("hindi")}
+          >
+            Hindi
+          </button>
+          <button
+            className="un-selected-btn"
+            onClick={() => seletLanguage("english")}
+          >
+            English
+          </button>
+        </div>
       </MyModal>
     </>
   );

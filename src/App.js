@@ -2,13 +2,13 @@
 import './styles/App.css';
 import Welcome from './Welcome';
 import React, { useState } from 'react'
+import QuizPage from './page/QuizPage';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
-    <Welcome />
-  
+    {/* <Welcome /> */}
+  <QuizPage />
     </>
   );
 }
