@@ -5,9 +5,8 @@ import { IoClose } from "react-icons/io5";
 import { data } from "./../../data/data";
 import SingleQuiz from "./SingleQuiz";
 import QuizPageHeader from "./QuizPageHeader";
-import { useEffect } from "react";
 
-function Quiz({ setFinished, finished }) {
+function Quiz({ setFinished, finished, score, setScore }) {
   const [showModal, setShowModal] = useState(false);
   const openModal = () => {
     setShowModal(true);
@@ -23,7 +22,6 @@ function Quiz({ setFinished, finished }) {
 
   const [questions, setQuestions] = useState(data);
   const [quesIndex, setQuesIndex] = useState(0);
-  const [score, setScore] = useState(0);
   const [lockedQues, setLockedAns] = useState([]);
   const [locked, setLocked] = useState("");
   const [end, setEnd] = useState(false);
@@ -51,7 +49,7 @@ function Quiz({ setFinished, finished }) {
 
   const handelFinish = () => {
     console.log("finish");
-    setFinished(true)
+    setFinished(true);
   };
 
   return (

@@ -7,12 +7,25 @@ import QuizResultPopUp from "../components/quizResultPopUp/QuizResultPopUp";
 
 function QuizPage() {
   const [finished, setFinished] = useState(false);
+  const [submited, setSubmited] = useState(false);
+  const [score, setScore] = useState(0);
   return (
     <section className="page-wrapper">
-      {finished ? (
-        <SubmitDetails />
+      {!finished && !submited ? (
+        <Quiz
+          finished={finished}
+          setFinished={setFinished}
+          setScore={setScore}
+          score={score}
+        />
+      ) : finished && !submited ? (
+        <SubmitDetails setSubmited={setSubmited} />
       ) : (
-        <Quiz finished={finished} setFinished={setFinished} />
+        <QuizResultPopUp
+          setFinished={setFinished}
+          setSubmited={setSubmited}
+          score={score}
+        />
       )}
       {/* <QuizResultPopUp /> */}
     </section>

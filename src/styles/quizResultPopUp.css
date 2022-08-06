@@ -4,8 +4,8 @@
 }
 
 .popUp__content {
-  width: 100vw;
-  max-width: 327px;
+  width: 100%;
+  max-width: 100%;
   height: 456px;
   background: #e7d9cc;
   border-radius: 20px;
@@ -14,6 +14,8 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 .congrats__section {
   display: flex;

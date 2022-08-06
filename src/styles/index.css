@@ -127,3 +127,7 @@ body {
   display: flex;
   gap: 30px;
 }
+
+.fw-500{
+  font-weight: 500 !important;
+}

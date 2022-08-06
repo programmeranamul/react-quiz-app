@@ -1,18 +1,16 @@
 import "./styles/App.css";
 import Welcome from "./Welcome";
-import React, { useState } from "react";
+import React from "react";
 import QuizPage from "./page/QuizPage";
-import SubmitDetails from "./components/submitDetails/SubmitDetails";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>   
-    <Routes>
+    <>
+      <Routes>
         <Route path="/" element={<Welcome />} />
-        <Route path="quiz" element={<QuizPage />  } />
-      </Routes>   
-        
+        <Route path="quiz" element={<QuizPage />} />
+      </Routes>
     </>
   );
 }
