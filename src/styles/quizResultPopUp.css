@@ -1,0 +1,114 @@
+.quizResultPopUp {
+  display: grid;
+  place-items: center;
+}
+
+.popUp__content {
+  width: 100vw;
+  max-width: 327px;
+  height: 456px;
+  background: #e7d9cc;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.congrats__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.congrats__section img {
+  margin: 0 auto;
+
+  object-fit: contain;
+}
+.congrats__massage {
+  font-family: "Alegreya";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  color: #382e2c;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quiz__time {
+  font-family: "Alegreya";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  color: #382e2c;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.time__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.time__icon p {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: #a47167;
+  margin-bottom: 0;
+  align-self: flex-end;
+}
+.more__points-btn {
+  width: 282px;
+  height: 47px;
+  background: #b78f87;
+  border-radius: 16px;
+  border: none;
+  font-family: "Alegreya";
+  font-weight: 500;
+  font-size: 20px;
+  color: #382e2c;
+}
+
+.share__button-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  gap: 10px;
+}
+.share__it {
+  width: 270px;
+  height: 54px;
+  background: #382e2c;
+  border-radius: 15px;
+  border: none;
+  font-family: "Alegreya";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+.try__again {
+  width: 270px;
+  height: 54px;
+  background: transparent;
+  border-radius: 15px;
+  border: none;
+  font-family: "Alegreya";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
