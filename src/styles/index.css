@@ -68,7 +68,6 @@ body {
 }
 .page-wrapper {
   padding-top: 42px;
-
 }
 .container {
   max-width: 600px !important;
@@ -134,11 +133,14 @@ body {
 .fw-500 {
   font-weight: 500 !important;
 }
+.qut {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
-
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
   .page-wrapper {
     padding-top: 20px;
-  
   }
- }
+}
