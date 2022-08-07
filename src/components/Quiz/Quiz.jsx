@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import img from "../../images/image 6.png";
 import MyModal from "./../MyModal";
 import { IoClose } from "react-icons/io5";
 import { data } from "./../../data/data";
@@ -30,6 +29,9 @@ function Quiz({ setFinished, finished, score, setScore }) {
     setLocked("");
     let newIndex = quesIndex + 1;
     setQuesIndex(newIndex);
+    if (locked === questions[quesIndex].correct_answer) {
+      setScore(score + 1);
+    }
 
     if (newIndex >= questions.length - 1) {
       setEnd(true);
@@ -37,12 +39,12 @@ function Quiz({ setFinished, finished, score, setScore }) {
   };
 
   const checkAnswer = (answer) => {
-    if (lockedQues.includes(quesIndex)) return;
+    // if (lockedQues.includes(quesIndex)) return;
     setLocked(answer);
-    if (answer === questions[quesIndex].correct_answer) {
-      setScore(score + 1);
-    }
-    setLockedAns([...lockedQues, quesIndex]);
+    // if (answer === questions[quesIndex].correct_answer) {
+    //   setScore(score + 1);
+    // }
+    // setLockedAns([...lockedQues, quesIndex]);
   };
 
   const handelFinish = () => {
@@ -66,22 +68,15 @@ function Quiz({ setFinished, finished, score, setScore }) {
         />
       </article>
       <article className="container">
+       
         <div className="mb-4">
-          <button
-            className={"outline-btn d-block w-100 br-15"}
-            onClick={() => handelCoorectAnsAndDtls()}
-          >
-            Show right answer & Details
-          </button>
-        </div>
-        <div className="pb-5">
           {end ? (
             <button
               onClick={handelFinish}
               className={`${
-                lockedQues.includes(quesIndex) ? "" : "btn_disabled"
+                locked ? "" : "btn_disabled"
               } filled-btn d-block w-100 br-15`}
-              disabled={lockedQues.includes(quesIndex) ? false : true}
+              disabled={locked ? false : true}
             >
               Finish
             </button>
@@ -89,13 +84,22 @@ function Quiz({ setFinished, finished, score, setScore }) {
             <button
               onClick={handelNext}
               className={`${
-                lockedQues.includes(quesIndex) ? "" : "btn_disabled"
+                locked ? "" : "btn_disabled"
               } filled-btn d-block w-100 br-15`}
-              disabled={lockedQues.includes(quesIndex) ? false : true}
+             disabled = {locked ? false: true}
             >
               Next
             </button>
           )}
+        </div>
+
+        <div className="pb-5">
+          <button
+            className={"outline-btn d-block w-100 br-15"}
+            onClick={() => handelCoorectAnsAndDtls()}
+          >
+            Show right answer & Details
+          </button>
         </div>
       </article>
       <MyModal showModal={showModal}>
