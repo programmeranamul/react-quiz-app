@@ -72,7 +72,7 @@ const SubmitDetails = ({setSubmited}) => {
               className="form__input"
               {...register("city", { required: true })}
             />
-            <label className="form__label">Your Age </label>
+            <label className="form__label">City </label>
             <TiLocation className="city_icon input_icon" />
             {errors.city && (
               <p className="mb-0 text-danger">This field is required</p>
@@ -92,23 +92,3 @@ const SubmitDetails = ({setSubmited}) => {
 
 export default SubmitDetails;
 
-// import React from "react";
-// import { useForm } from "react-hook-form";
-// import InputField from "./InputField";
-// import { AiFillCaretDown } from "react-icons/ai";
-// import { TiLocation } from "react-icons/ti";
-// import { BsArrowLeftShort } from "react-icons/bs";
-// const SubmitDetails = () => {
-//   const { register, handleSubmit } = useForm();
-//   const onSubmit = (data) => console.log(data);
-//   return (
-//     <section className="submit-details">
-//       <div className="container">
-//         <h1 className="title-1 text-center mb-4">Submit Details</h1>
-//         <h2 className="title-1 text-center mb-4 fw-500">Please fill your details to submit quiz</h2>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default SubmitDetails;
